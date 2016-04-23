@@ -14,9 +14,6 @@ uint32_t calcTwiddle ( sonofy_FFTParams *fft ){
     float Arg;
     int32_t j;
 
-    fft->twiddleRe = (float*) malloc( sizeof(float) * fft->NFFT );
-    fft->twiddleIm = (float*) malloc( sizeof(float) * fft->NFFT );
-
     for( j=0; j<fft->NFFT; j++ ){
         Arg = 2 * M_PI * (float)j / (float)fft->NFFT;
         fft->twiddleRe[j] = cos(Arg);
@@ -128,7 +125,7 @@ uint32_t sonofy_initFFT         ( sonofy_FFTParams *f, uint16_t NFFT, uint16_t N
     f->fftAngle    = (float*)malloc(sizeof(float)*NFFT);
     f->twiddleIm   = (float*)malloc(sizeof(float)*NFFT);
     f->twiddleRe   = (float*)malloc(sizeof(float)*NFFT);
-    
+
     genWND( f );
 
     return 0;
