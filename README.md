@@ -11,4 +11,4 @@ for raw data sonification.
 Read raw data from text file and save the results in synthesized wave files or MIDI notations.
 
 ### Basic Sonification
-Sonification by iFFT resynthesis of symbolic mapping between data and MIDI events (CC or MIDI notes)
+Sonification by iFFT resynthesis or symbolic mapping between data and MIDI events (CC or MIDI notes)
