@@ -1,2 +1,2 @@
 # libsonofy
-A collection of text sonification facilities in C
+A collection of raw data sonification facilities in C
