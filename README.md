@@ -1,6 +1,6 @@
 # libsonofy
-A collection of raw data sonification tools in C
-2016, Alessio Degani, <alessio.degani@gmail.com>
+A collection of raw data sonification tools in C  
+2016, Alessio Degani, <alessio.degani@gmail.com>  
 Released under GNU/GPL v3
 
 ## Objective
