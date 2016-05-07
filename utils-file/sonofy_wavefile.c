@@ -13,10 +13,10 @@ uint16_t sonofy_wavread(char *fileName, int16_t **samples, sonofy_wHeader *heade
     int fd;
 
     char chunkID[4];
-    uint32_t chunkSize;
-    uint32_t chunkPtr;
-    uint32_t fmtPtr, fmtSize;
-    uint32_t dataPtr, dataSize;
+    uint32_t chunkSize=0;
+    uint32_t chunkPtr=0;
+    uint32_t fmtPtr=0, fmtSize=0;
+    uint32_t dataPtr=0, dataSize=0;
 
     if ((fd = open(fileName, O_RDONLY)) < 1)
         return NOTFOUND;
@@ -51,6 +51,7 @@ uint16_t sonofy_wavread(char *fileName, int16_t **samples, sonofy_wHeader *heade
     }
 
     // Read the fmt chunk
+    // TODO: check if fmtPtr != 0
     lseek(fd, fmtPtr,SEEK_SET);
     read(fd, &header->subChunkID, fmtSize+8 );
 
@@ -58,6 +59,7 @@ uint16_t sonofy_wavread(char *fileName, int16_t **samples, sonofy_wHeader *heade
         return NOTPCM;
 
     // Read the data Chunk
+    // TODO: check if dataPtr != 0
     lseek(fd, dataPtr,SEEK_SET);
     read(fd, &header->dataChunkID, 8 );
 
